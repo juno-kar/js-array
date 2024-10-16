@@ -7,9 +7,7 @@ const students = [
 ];
 
 // Ваше завдання: реалізувати наступні функції
-
 function getTopScoringStudents(students) {
-  // Ваш код тут
   let result = [];
 
   students.forEach(students => {
@@ -25,7 +23,6 @@ getTopScoringStudents(students);
 // 2. getAverageAge
 // Приймає масив студентів та повертає середній вік студентів
 function getAverageAge(students) {
-  // Ваш код тут
   let average = 0;
   let len = students.length;
 
@@ -42,7 +39,6 @@ getAverageAge(students);
 // 3. addStudent
 // Приймає масив студентів та новий об'єкт студента і додає його до масиву
 function addStudent(students, student) {
-  // Ваш код тут
   students.push(student);
   return students;
 }
@@ -50,29 +46,7 @@ function addStudent(students, student) {
 // 4. removeStudentByName
 // Приймає масив студентів та ім'я студента, якого потрібно видалити, і повертає новий масив без цього студента
 function removeStudentByName(students, name) {
-  // Ваш код тут
-  let compared = name;
-  let len = students.length;
-  let deleteLast = [];
-  let secondPart = [];
-  let j = 0;
-  
-  for (let i = 0; i < len; i++) {
-    deleteLast.push(students[i]);
-    j++;
-    if (students[i].name === compared) {
-      break;
-    }
-  }
-
-  for (j; j < len; j++) {
-    secondPart.push(students[j]);
-  }
-
-  deleteLast.pop();
-
-  let result = deleteLast.concat(secondPart);
-  return result;
+  return students.filter(student => student.name !== name);
 }
 
 module.exports = { getTopScoringStudents, getAverageAge, addStudent, removeStudentByName };
